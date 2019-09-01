@@ -1,0 +1,219 @@
+{
+    "dm": {
+        "name": "demo",
+        "components": [{
+            "_type": "/infra/docker_host",
+            "name": "my_machine",
+            "properties": [],
+            "id": "7ed41b2f-aaad-4d27-bf11-f33147502e8d",
+            "provided_execution_port": [{
+                "name": "offerDocker"
+            }],
+            "ip": "127.0.0.1",
+            "port": ["2376"],
+            "credentials": {
+                "username": "ubuntu",
+                "password": "",
+                "sshkey": ""
+            },
+            "monitoring_agent": "full"
+        }, {
+            "_type": "/internal/node_red",
+            "name": "nodered",
+            "properties": [],
+            "id": "e3258b2d-387d-4e1c-99f5-0428f48b9773",
+            "provided_execution_port": [],
+            "docker_resource": {
+                "name": "520124ed-4d74-4a16-a3e4-220e2b2d4eaa",
+                "image": "nicolasferry/multiarch-node-red-thingml:latest",
+                "command": "",
+                "port_bindings": {
+                    "1880": "1880"
+                },
+                "devices": {
+                    "PathOnHost": "",
+                    "PathInContainer": "",
+                    "CgroupPermissions": "rwm"
+                }
+            },
+            "ssh_resource": {
+                "name": "4bc544f4-67f2-4135-8b91-6bd5c823f329",
+                "startCommand": "",
+                "downloadCommand": "",
+                "installCommand": "",
+                "configureCommand": "",
+                "credentials": {
+                    "username": "ubuntu",
+                    "password": "",
+                    "sshkey": ""
+                }
+            },
+            "ansible_resource": {
+                "name": "219f5379-bfbe-43ae-9f6b-3561bed14860",
+                "playbook_path": "",
+                "playbook_host": "",
+                "credentials": {
+                    "username": "ubuntu",
+                    "password": "",
+                    "sshkey": ""
+                }
+            },
+            "required_execution_port": {
+                "name": "demandDocker",
+                "needDeployer": false
+            },
+            "provided_communication_port": [{
+                "name": "8218bdce-bc52-4c14-87c3-014e1c1b4160",
+                "port_number": "1880"
+            }],
+            "required_communication_port": [],
+            "nr_flow": [],
+            "path_flow": "",
+            "packages": []
+        }],
+        "links": [],
+        "containments": [{
+            "name": "dz",
+            "properties": [],
+            "src": "/my_machine/offerDocker",
+            "target": "/nodered/demandDocker"
+        }],
+        "type_registry": []
+    },
+    "graph": {
+        "elements": {
+            "nodes": [{
+                "data": {
+                    "id": "my_machine"
+                },
+                "position": {
+                    "x": 441.81828310298476,
+                    "y": 144.67575766071695
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "classes": "container"
+            }, {
+                "data": {
+                    "id": "nodered",
+                    "parent": "my_machine"
+                },
+                "position": {
+                    "x": 441.81828310298476,
+                    "y": 144.67575766071695
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "classes": "node_red"
+            }]
+        },
+        "style": [{
+            "selector": "node",
+            "style": {
+                "label": "data(id)",
+                "background-fit": "contain",
+                "background-image-opacity": "0.3",
+                "text-valign": "center",
+                "text-halign": "center",
+                "font-size": "4px",
+                "font-weight": "bold"
+            }
+        }, {
+            "selector": "node.container",
+            "style": {
+                "padding": "10px",
+                "text-valign": "top",
+                "text-halign": "center",
+                "background-color": "#DDD",
+                "font-size": "8px",
+                "font-weight": "normal",
+                "shape": "rectangle",
+                "background-image": "./img/docker-official.svg"
+            }
+        }, {
+            "selector": "edge",
+            "style": {
+                "curve-style": "bezier",
+                "target-arrow-shape": "triangle"
+            }
+        }, {
+            "selector": "edge.control",
+            "style": {
+                "curve-style": "bezier",
+                "target-arrow-shape": "circle"
+            }
+        }, {
+            "selector": ":selected",
+            "style": {
+                "background-color": "black",
+                "line-color": "black",
+                "target-arrow-color": "black",
+                "source-arrow-color": "black"
+            }
+        }, {
+            "selector": "node.questionable",
+            "style": {
+                "border-color": "#A33",
+                "background-color": "#B55",
+                "shape": "roundrectangle"
+            }
+        }, {
+            "selector": "node.node_red",
+            "style": {
+                "background-image": "./img/node-red-256.png"
+            }
+        }, {
+            "selector": "node.ansible",
+            "style": {
+                "background-image": "./img/ansible.png"
+            }
+        }, {
+            "selector": "node.device",
+            "style": {
+                "padding": "10px",
+                "text-valign": "top",
+                "text-halign": "center",
+                "background-color": "#DDD",
+                "font-size": "8px",
+                "font-weight": "normal",
+                "shape": "rectangle",
+                "background-image": "./img/device.png"
+            }
+        }, {
+            "selector": "node.vm",
+            "style": {
+                "padding": "10px",
+                "text-valign": "top",
+                "text-halign": "center",
+                "background-color": "#DDD",
+                "font-size": "8px",
+                "font-weight": "normal",
+                "shape": "rectangle",
+                "background-image": "./img/server_cloud.png"
+            }
+        }],
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 3.908408957924024,
+        "minZoom": 0.4,
+        "maxZoom": 6,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+            "x": -1224.4401712860138,
+            "y": -331.5586212033387
+        },
+        "boxSelectionEnabled": false,
+        "renderer": {
+            "name": "canvas"
+        }
+    }
+}
