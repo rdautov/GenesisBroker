@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5d52c0b4e977be8f600b3534"},"id":"text-hat-hello","template":"text-hat","parameter":{"COLOR":"blue"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b3535"},"id":"text-green","template":"color-in-text","parameter":{"COLOR":"green"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b3536"},"id":"led-green","template":"color-in-led","parameter":{"COLOR":"green"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b3537"},"id":"led-blue","template":"color-in-led","parameter":{"COLOR":"blue"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b3538"},"id":"led-red","template":"color-in-led","parameter":{"COLOR":"red"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b3539"},"id":"hat-red","template":"color-in-hat","parameter":{"COLOR":"red"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b353a"},"id":"hat-green","template":"color-in-hat","parameter":{"COLOR":"green"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b353b"},"id":"hat-blue","template":"color-in-hat","parameter":{"COLOR":"blue"}}
+{"_id":{"$oid":"5d52c0b4e977be8f600b353c"},"id":"hat-rotate","template":"color-in-hat","parameter":{"COLOR":"rotate"}}
+{"_id":{"$oid":"5d6cf39f43cf5364c4c62558"},"id":"genesis_nodered","template":"GenesisOnRaspberry","parameter":{"URL":"https://gitlab.com/enact/GeneSIS/raw/master/docs/tutorial/1.nodered_localhost/model.json"}}
+{"_id":{"$oid":"5d6d05fb43cf5364c4c6255a"},"id":"genesis_variant","template":"Genesis","parameter":{"URL":"https://gitlab.com/enact/GeneSIS/raw/master/docs/tutorial/1.nodered_localhost/model.json"},"property":{"predefinedTag":{"capability":"genesis"}}}
