@@ -64,7 +64,7 @@
             "restartPolicy": "always",
             "settings": {
               "image": "rdautov/genesis:latest",
-              "createOptions": "{\"ExposedPorts\":{\"8880/tcp\":{}},\"HostConfig\":{\"PortBindings\":{\"8880/tcp\":[{\"HostPort\":\"8880\"}]}}}"
+              "createOptions": "{\"ExposedPorts\":{\"8880/tcp\":{}},\"HostConfig\":{\"Privileged\":true,\"PortBindings\":{\"8880/tcp\":[{\"HostPort\":\"8880\"}]}}}"
             }
           },
           "GenesisBroker": {
@@ -74,7 +74,7 @@
             "restartPolicy": "always",
             "settings": {
               "image": "rdautov/genesisbroker:0.0.1-arm32v7",
-              "createOptions": {}
+              "createOptions": "{\"Cmd\":[\"https://gitlab.com/enact/GeneSIS/raw/master/docs/tutorial/1.nodered_localhost/model.json\"],\"HostConfig\":{\"Privileged\":true,\"NetworkMode\":\"host\"},\"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}}}"
             }
           },
           "SimulatedTemperatureSensor": {

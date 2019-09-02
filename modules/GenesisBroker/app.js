@@ -28,8 +28,14 @@ var Mqtt = require('azure-iot-device-mqtt').Mqtt;
 var DeviceClient = require('azure-iot-device').Client
 var Message = require('azure-iot-device').Message;
 
-var myArgs = process.argv.slice(2);
-deploy(myArgs[0]);
+if (process.argv.length > 2) {
+  console.log("Received command line argument: " + process.argv[2]);
+  deploy(process.argv[2]);
+} else {
+  console.log("No command line argument received!");
+}
+
+//var myArgs = process.argv.slice(2);
 
 function deploy(model_url) {
   
@@ -70,7 +76,7 @@ function deploy(model_url) {
     console.error(`Got error: ${e.message}`);
   });
   
-  axios.post('http://127.0.0.1:8880/genesis/deploy', genesisModel)
+  axios.post('http://0.0.0.0:8880/genesis/deploy', genesisModel)
   .then((res) => {
     console.log(`statusCode: ${res.statusCode}`)
     console.log(res)
